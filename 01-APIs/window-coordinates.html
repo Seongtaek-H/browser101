@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: beige;
+        margin-bottom: 4px;
+        border: 2px red solid;
+      }
+      .orange {
+        background-color: orange;
+      }
+      span {
+        position: fixed;
+        top: 10px;
+        left: 700px;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="orange"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <span
+      ><button>scroll by 100px(y)</button> <button>scroll to 100px(y)</button
+      ><button>scroll to orange</button></span
+    >
+    <script>
+      const orange = document.querySelector(".orange");
+      orange.addEventListener("click", (e) => {
+        const rect = orange.getBoundingClientRect();
+        console.log(rect);
+        console.log(`clientX : ${e.clientX}, clientY : ${e.clientY}`);
+        console.log(`pageX : ${e.pageX}, pageY : ${e.pageY}`);
+      });
+      const btn = document.querySelectorAll("button");
+      btn[0].addEventListener("click", () => {
+        window.scrollBy(0, 100);
+      });
+      btn[1].addEventListener("click", () => {
+        window.scrollTo(0, 100);
+      });
+      btn[2].addEventListener("click", () => {
+        window.scrollTo(8, 872);
+      });
+    </script>
+  </body>
+</html>
